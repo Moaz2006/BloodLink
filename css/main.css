@@ -253,7 +253,6 @@ header nav .toggle-menu:hover + ul li{
     .landing .container { flex-direction: column; text-align: center; }
     .landing .text { text-align: center; }
 }
-
 /* End Landing */
 
 /* Start Features */
