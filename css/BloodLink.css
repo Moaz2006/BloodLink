@@ -1,0 +1,324 @@
+/* start Variables */
+:root {
+    --main-color: #890101;    /* اللون الأحمر الأساسي */
+    --secondary-color: #C5C3C3; /* لون رصاصي للخلفية */
+    --section-padding: 60px;  /* مسافة ثابتة بين السكاشن */
+    --main-duration: 0.3s;
+}
+/* End Variables */
+
+/* start Components */
+    .special-heading{
+        color: #ebeced;
+        font-size: 100px;
+        text-align: center;
+        font-weight: 800;
+        letter-spacing: -3px;
+        margin: 0;
+    }
+
+    .special-heading + p{
+        margin: -30px 0 0;
+        font-size: 20px;
+        text-align: center;
+        color: #797979;
+    }
+
+    @media (max-width: 767px){
+        .special-heading{
+            font-size: 60px;
+        }
+
+        .special-heading + p{
+            margin-top: -20px;
+        }
+    }
+
+    html{
+        scroll-behavior: smooth;
+    }
+
+/* end Components */
+
+/* start Global Rules */
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: "Work Sans", sans-serif;
+}
+
+    .parent{
+        background-color: #eee;
+    }
+
+    .container{
+        padding-left: 15px;
+        padding-right: 15px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+/* Small */
+@media (min-width: 768px) {
+.container {
+    width: 750px;
+}
+}
+
+/* Medium */
+@media (min-width: 992px) {
+.container {
+    width: 970px;
+}
+}
+
+/* Large */
+@media (min-width: 1200px) {
+.container {
+    width: 1170px;
+}
+}
+/* End Global Rules */
+
+/* start Header */
+header {
+    width: 100%;
+    padding: 20px 0;
+    background-color: var(--main-color);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+}
+
+header .logo img {
+    height: 50px; /* تحكم في حجم اللوجو بتاعك */
+    border-radius: 20px;
+}
+
+header nav {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* يخلي الروابط على اليمين بما إن الموقع عربي */
+}
+
+header nav ul {
+    display: flex;
+    list-style: none;
+    position: relative;
+    z-index: 2;
+}
+
+header nav ul li{
+    position: relative;
+}
+
+header nav ul li a {
+    padding: 10px 20px;
+    display: flex;
+    color: black;
+    text-decoration: none;
+    font-size: 18px;
+    transition: var(--main-duration);
+    font-weight: 500;
+    position: relative;
+    z-index: 2;
+}
+    
+
+header nav ul .active::before,
+header nav ul li:hover::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    border-radius: 8px;
+    top: 0;
+    left: 40px;
+    transform: translateX(-50%);
+    z-index: -1;
+    animation:span ;
+    transition-duration: var(--main-duration);
+} 
+
+@media (max-width: 767px) {
+header nav ul .active::before{
+    display: none;
+}
+    }
+    
+
+        .header .links:hover ul{
+        display: block;
+    }
+
+/* لظهور القائمة في الموبايل */
+header .toggle-menu {
+    color: white;
+    font-size: 22px;
+    cursor: pointer;
+    display: none; /* مخفي في الشاشات الكبيرة */
+}
+
+@media (max-width: 767px) {
+    header .toggle-menu {
+        display: block;
+    }
+
+    header nav li{
+        display: none;
+    }
+}
+
+header nav .toggle-menu:hover + ul {
+    background-color:#e7e1e1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: fit-content;
+    min-width: 200px;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 2;
+}
+
+header nav .toggle-menu:hover + ul li{
+    display: block;
+    width: 100%;
+    margin: 5px 0;
+    cursor: pointer;
+    padding: 10px 0;
+    background-color: var(--secondary-color);
+    border-radius: 8px;
+    margin-bottom: 5px;
+}
+/* End Header */
+
+/* Start Landing */
+.landing {
+    background-color: #d9d9d9; /* اللون الرمادي الفاتح في خلفية الصورة */
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+}
+.landing .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+.landing .image img {
+    width: 500px;
+    max-width: 100%;
+    border-radius: 20px;
+}
+.landing .text {
+    background-color: #C5C3C3;
+    border-radius: 20px;
+    flex: 1;
+    text-align: right;
+    padding: 75px;
+}
+.landing .text h1 {
+    font-size: 35px;
+    margin-bottom: 20px;
+    color: #000;
+    text-align: center;
+    font-weight: 800;
+    letter-spacing: -3px;
+}
+.landing .text p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #555;
+}
+@media (max-width: 991px) {
+    .landing .container { flex-direction: column; text-align: center; }
+    .landing .text { text-align: center; }
+}
+
+/* End Landing */
+
+/* Start Features */
+.features {
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+}
+.features .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+}
+.features .feat {
+    background-color: #f6f6f6;
+    padding: 30px;
+    text-align: center;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: var(--main-duration);
+}
+.features .feat:hover { transform: translateY(-10px); }
+.features .feat img { width: 60px; margin-bottom: 15px; }
+.features .feat h3 { font-size: 22px; margin-bottom: 10px; }
+.features .feat p { color: #777; margin-bottom: 20px; }
+.features .feat a {
+    color: var(--main-color);
+    text-decoration: none;
+    font-weight: bold;
+    display: block;
+}
+
+.features .feat a:hover{
+    color: black;
+}
+/* End Features */
+
+/* Start Social Footer */
+.social-footer {
+    background-color: #b1b1b1;
+    padding: 15px 0;
+}
+.social-footer .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.social-footer p { font-weight: 500; }
+.social-footer .icons i {
+    margin: 0 10px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: var(--main-duration);
+}
+.social-footer .icons i:hover { color: var(--main-color); }
+
+.social-footer .container a{
+    text-decoration: none;
+    color: black;
+}
+/* End Social Footer */
+
+
+
+
+
+
