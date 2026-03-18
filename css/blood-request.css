@@ -164,7 +164,7 @@ width: 160px;
 }
 
 .form-side {
-    background-color: #BEBEBE;
+    background-color: #BEBEBE !important;
     flex: 1; /* الجزئين واخدين مساحة متساوية */
     display: flex;
     flex-direction: column;
@@ -302,6 +302,7 @@ width: 160px;
         color: var(--main-color);
         text-align: center;
     }
+
 
 /* end personal data two */
 

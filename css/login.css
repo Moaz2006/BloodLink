@@ -121,9 +121,9 @@ body {
 }
 
 
-.form-side {
+.form-side  {
     flex: 1;
-    background: #E8E5E5; /* اللون الرمادي الفاتح اللي في الصورة */
+    background: #E8E5E5 !important; /* اللون الرمادي الفاتح اللي في الصورة */
     padding: 30px;
     border-radius: 15px;
 }
@@ -207,7 +207,7 @@ body {
     margin-bottom: 20px;
 }
 
-button {
+button  {
     width: 100%;
     padding: 12px;
     background-color: #d1d1d1;
@@ -217,10 +217,59 @@ button {
     font-weight: bold;
 }
 
-button:hover {
+button {
     background-color: var(--main-color);
     color: white;
 }
 /* End login */
 
+/* شاشات الموبايل والتابلت (أصغر من 992px) */
+@media (max-width: 991px) {
+    .login-container .container {
+        flex-direction: column; /* اللوجو فوق والفورم تحت بدل ما هما جنب بعض */
+        padding: 20px;
+        width: 95%; /* عشان ميبقاش لازق في حواف الشاشة */
+        gap: 30px;
+    }
 
+    .info-side {
+        padding-right: 0; /* شيل المسافة اللي كانت معمولة عشان الفورم اللي جنبه */
+        margin-bottom: 20px;
+    }
+
+    .info-side img {
+        width: 150px; /* نصغر اللوجو شوية في الموبايل */
+    }
+
+    .info-side p {
+        font-size: 16px; /* نصغر الكلام عشان مياخدش مساحة كبيرة */
+        line-height: 1.6;
+    }
+
+    .form-side {
+        width: 100%; /* الفورم تفرش في عرض الكارت كله */
+        padding: 20px;
+    }
+}
+
+/* الموبايلات الصغيرة جداً (أصغر من 575px) */
+@media (max-width: 575px) {
+    .login-container .container {
+        border-radius: 10px; /* حواف أقل شوية عشان المساحة */
+    }
+
+    .form-side h2 {
+        font-size: 20px; /* تصغير العنوان */
+        letter-spacing: -1px;
+    }
+
+    .input-wrapper input {
+        height: 45px; /* تقليل الارتفاع سنة عشان الشاشة الصغيرة */
+        font-size: 14px;
+    }
+
+    button {
+        padding: 10px;
+        font-size: 14px;
+    }
+}
