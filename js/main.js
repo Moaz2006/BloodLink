@@ -1,3 +1,6 @@
+
+// index and login page
+
 // 1. تحديد العناصر اللي هنشتغل عليها
 let toggleBtn = document.querySelector(".toggle-menu");
 let navLinks = document.querySelector(".links");
@@ -29,3 +32,33 @@ allLinks.forEach((link) => {
         navLinks.classList.remove("show");
     };
 });
+
+// end index and login page
+
+
+
+    // blood-request page??
+// 1. تحديد العناصر (تأكد من مطابقة الكلاسات للـ HTML بتاعك)
+const plusBtn = document.querySelector(".plus");
+const minusBtn = document.querySelector(".minus");
+const qtyInput = document.querySelector(".qty-control input");
+
+// تأكد إن العناصر موجودة في الصفحة قبل ما نشغل الكود
+if (plusBtn && minusBtn && qtyInput) {
+
+    // 2. برمجة زرار الزائد (+)
+    plusBtn.onclick = function() {
+        let currentValue = parseInt(qtyInput.value);
+        qtyInput.value = currentValue + 1;
+    };
+
+    // 3. برمجة زرار الناقص (-)
+    minusBtn.onclick = function() {
+        let currentValue = parseInt(qtyInput.value);
+        // شرط عشان م ينزلش تحت الصفر (أو تحت 1 حسب رغبتك)
+        if (currentValue > 0) {
+            qtyInput.value = currentValue - 1;
+        }
+    };
+}
+// end blood-request page

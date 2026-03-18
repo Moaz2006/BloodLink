@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BloodLink</title>
+
+    <!-- Render All Elements Normally -->
+    <link rel="stylesheet" href="css/normalize.css">
+
+    <!-- Font Awesome Library -->
+    <link rel="stylesheet" href="css/all.min.css">
+
+        <!-- Main Template Css File -->
+        <link rel="stylesheet" href="css/main.css">
+
+        <!-- Main Template Css File -->
+        <link rel="stylesheet" href="css/login.css">
+
+        <!-- Main Template Css File -->
+        <link rel="stylesheet" href="css/blood-request.css">
+
+
+    <!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <!-- start Header -->
+   <header>
+        <div class="container">
+            <a href="index.html" class="logo"><img src="Images/logo.png" alt="Logo"></a>
+            <nav>
+                <i class="fas fa-bars toggle-menu"></i>
+                <ul class="links">
+                    <li><a href="index.html">الرئيسية</a></li>
+                    <li><a href="search.html">مراكز التبرع</a></li>
+                    <li><a href="blood-request.html" class="active">طلب دم</a></li>
+                    <li><a href="donate.html">تبرع الآن</a></li>
+                    <li><a href="login.html">تسجيل الدخول</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <!-- End Header -->
+
+    <!-- start request -->
+    <div class="request-page">
+        <div class="container">
+            <div class="request-card">
+                <div class="card-header">
+                    <a href="index.html" class="btn-back">الرجوع</a>
+                    <h2>استمارة طلب بالدم</h2>
+                    <button type="submit" form="main-request-form" class="btn-submit">ارسال الاستماره</button>
+                </div>
+
+                <!-- Start Personal Data one -->
+                <form id="main-request-form" class="card-body">
+                    <div class="form-side personal-data">
+                        <div class="input-group">
+                            <label class="text3">الاسم كامل</label>
+                            <input type="text" placeholder="الاسم رباعي">
+                        </div>
+                        
+                        <div class="input-group">
+                            <label class="text3">العمر</label>
+                            <div class="age-inputs">
+                                <input type="number" placeholder="يوم" required>
+                                <input type="number" placeholder="شهر" required>
+                                <input type="number" placeholder="سنة" required>
+                            </div>
+                        </div>
+
+                        <div class="input-group">
+                            <label class="text3">نوع الجنس</label>
+                            <div class="radio-group">
+                                <label class="radio-label"><input type="radio" name="gender" required> ذكر</label>
+                                <label class="radio-label"><input type="radio" name="gender" > انثي</label>
+                            </div>
+                        </div>
+
+                        <div class="input-group">
+                            <label class="text3">العنوان بالتفصيل</label>
+                            <input type="text" placeholder="المستشفى / المنطقة" required>
+                        </div>
+
+                        <div class="input-group">
+                            <label class="text3">رقم الهاتف</label>
+                            <div class="phone-input">
+                                <input type="tel" placeholder="010xxxxxxx" required>
+                                <i class="fas fa-phone"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- End Personal Data one -->
+                    
+                    <!-- start personal Data two -->
+                    <div class="form-side blood-data">
+                        <div class="input-group">
+                            <label class="text">نوع فصيلة الدم</label>
+                            <div class="blood-grid">
+                                <label class="blood-item"><input type="radio" name="type" required> O-</label>
+                                <label class="blood-item"><input type="radio" name="type"> O+</label>
+                                <label class="blood-item"><input type="radio" name="type"> A-</label>
+                                <label class="blood-item"><input type="radio" name="type"> A+</label>
+                                <label class="blood-item"><input type="radio" name="type"> B-</label>
+                                <label class="blood-item"><input type="radio" name="type"> B+</label>
+                                <label class="blood-item"><input type="radio" name="type"> AB-</label>
+                                <label class="blood-item"><input type="radio" name="type"> AB+</label>
+                            </div>
+                        </div>
+
+                        <div class="input-group qty-section">
+                            <label class="text2">عدد الاكياس المطلوبة</label>
+                            <div class="qty-control">
+                                <button type="button" class="plus">+</button>
+                                <input type="number" value="0" min="0">
+                                <button type="button" class="minus">-</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End personal Data two -->
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- End request -->
+
+<!-- Start Social Footer -->
+<div class="social-footer">
+    <div class="container">
+        <p>find us on social networks</p>
+        <div class="icons">
+            <a href="https://www.linkedin.com/in/moaz-wael-65a9ba378?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            
+            <a href="https://github.com/Moaz2006" target="_blank">
+                <i class="fab fa-github"></i>
+            </a>
+            
+            <a href="#" target="_blank">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+            
+        </div>
+    </div>
+</div>
+<!-- End Social Footer -->
+    
+
+
+
+
+    <script src="js/main.js"></script>
+</body>
+</html>

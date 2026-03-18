@@ -154,24 +154,41 @@ body {
 /* تنسيق الـ Input */
 .input-wrapper {
     position: relative;
-    margin-top: 10px;
+    width: 100%;
+    margin-bottom: 20px;
 }
 
 .input-wrapper input {
     width: 100%;
-    padding: 12px 40px 12px 10px; /* مسافة للأيقونة */
+    padding-right: 55px !important; 
+    padding-left: 15px;
+    height: 50px; 
     border-radius: 10px;
     border: 1px solid #ccc;
     outline: none;
-    margin-bottom: 20px;
+    font-size: 16px;
+    text-align: right; 
+    direction: rtl;width: 100%;
+    padding-right: 55px !important; 
+    padding-left: 15px;
+    height: 50px; 
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    outline: none;
+    font-size: 16px;
+    text-align: right; 
+    direction: rtl;
 }
 
 .input-wrapper i {
     position: absolute;
-    right: 15px;
-    top: 40%;
+    right: 15px !important; 
+    top: 50%;
     transform: translateY(-50%);
-    color: black;
+    color: #777;
+    font-size: 18px;
+    z-index: 2; 
+    pointer-events: none;
 }
 
 .input-wrapper input:focus {
@@ -204,62 +221,6 @@ button:hover {
     background-color: var(--main-color);
     color: white;
 }
-
-/* Start Responsive Login */
-
-/* الشاشات المتوسطة (Tablets) */
-@media (max-width: 991px) {
-    .login-container .container {
-        width: 95%;
-        padding: 20px;
-    }
-}
-
-/* الشاشات الصغيرة (Mobile) */
-@media (max-width: 767px) {
-    .login-container .container {
-        flex-direction: column; /* العناصر تحت بعض */
-        padding: 20px 15px;
-        text-align: center;
-    }
-
-    .info-side {
-        padding-right: 0; /* نشيل المسافة اللي كانت يمين */
-        margin-bottom: 30px; /* مسافة بين الصورة والفورم */
-    }
-
-    .info-side img {
-        width: 150px; /* نصغر اللوجو شوية */
-    }
-
-    .info-side p {
-        font-size: 16px; /* نصغر الخط عشان مياخدش مساحة */
-        line-height: 1.6;
-    }
-
-    .form-side {
-        width: 100%; /* الفورم تاخد العرض كله */
-        padding: 20px;
-    }
-
-    .form-side h2 {
-        font-size: 24px;
-        letter-spacing: -1px;
-    }
-
-    /* تظبيط شكل الـ Inputs في الموبايل */
-    .input-wrapper input {
-        font-size: 14px;
-        padding: 10px 35px 10px 10px;
-    }
-
-    .input-wrapper i {
-        font-size: 14px;
-        right: 12px;
-    }
-}
-
-/* End Responsive Login */
 /* End login */
 
 
