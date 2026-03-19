@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BloodLink</title>
+
+    <!-- Render All Elements Normally -->
+    <link rel="stylesheet" href="css/normalize.css">
+
+    <!-- Font Awesome Library -->
+    <link rel="stylesheet" href="css/all.min.css">
+
+    <!-- BloodLink-Info Template Css File -->
+    <link rel="stylesheet" href="css/BloodLink-Info.css">
+
+    <!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <!-- Start Header -->
+<header>
+    <div class="container">
+        <a href="index.html" class="logo">
+            <img src="Images/logo.png" alt="Logo">
+        </a>
+        <nav>
+            <i class="fas fa-bars toggle-menu"></i>
+            <ul class="links">
+                <li><a href="index.html" class="nav-item">الرئيسية</a></li>
+                <li><a href="BloodLink-Info.html" class="nav-item">معلومات التبرع</a></li>
+                <li><a href="search.html" class="nav-item">مراكز التبرع</a></li>
+                <li><a href="blood-request.html" class="nav-item">طلب دم</a></li>
+                <li><a href="donate.html" class="nav-item">تبرع الآن</a></li>
+                <li><a href="login.html" class="nav-item">تسجيل الدخول</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+    <!-- End Header -->
+
+    <main class="info-section">
+        <div class="container">
+            
+            <div class="main-page-title">
+                <h1 class="special-heading">دليل المتبرع</h1>
+                <p>كل ما تحتاج معرفته عن إنقاذ الأرواح</p>
+            </div>
+
+            <section class="spiritual-container">
+                <div class="verse-box">
+                    <i class="fas fa-hand-holding-heart"></i>
+                    <p class="quran-text">"وَمَنْ أَحْيَاهَا فَكَأَنَّمَا أَحْيَا النَّاسَ جَمِيعًا"</p>
+                    <span class="verse-origin">سورة المائدة - آية 32</span>
+                </div>
+            </section>
+
+            <div class="info-grid">
+                <article class="info-card">
+                    <h2 class="card-title"><i class="fas fa-check-circle"></i> شروط التبرع بالدم</h2>
+                    <ul class="info-list">
+                        <li><strong>العمر:</strong> يجب أن يكون المتبرع بين 18 و 65 عاماً.</li>
+                        <li><strong>الوزن:</strong> ألا يقل الوزن عن 50 كجم كحد أدنى.</li>
+                        <li><strong>المدة الزمنية:</strong> 3 أشهر للرجال و 4 أشهر للنساء بين التبرع والآخر.</li>
+                        <li><strong>الحالة الصحية:</strong> الخلو من الأمراض المزمنة (مثل السكر غير المنتظم أو الضغط المرتفع) والأمراض المعدية.</li>
+                    </ul>
+                </article>
+
+                <article class="info-card">
+                    <h2 class="card-title"><i class="fas fa-droplet"></i> توافق فصائل الدم</h2>
+                    <div class="table-container">
+                        <table class="blood-table">
+                            <thead>
+                                <tr>
+                                    <th>الفصيلة</th>
+                                    <th>يعطي لـ</th>
+                                    <th>يستقبل من</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="blood-type">O+</td>
+                                    <td>O+, A+, B+, AB+</td>
+                                    <td>O+, O-</td>
+                                </tr>
+                                <tr class="special-row">
+                                    <td class="blood-type">O-</td>
+                                    <td>الجميع (متبرع عام)</td>
+                                    <td>O- فقط</td>
+                                </tr>
+                                <tr>
+                                    <td class="blood-type">A+</td>
+                                    <td>A+, AB+</td>
+                                    <td>A+, A-, O+, O-</td>
+                                </tr>
+                                <tr class="special-row">
+                                    <td class="blood-type">AB+</td>
+                                    <td>AB+ فقط</td>
+                                    <td>الجميع (مستقبل عام)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </main>
+
+    <div class="social-footer">
+        <div class="container">
+            <p>find us on social networks</p>
+            <div class="icons">
+                <a href="https://www.linkedin.com/in/moaz-wael-65a9ba378" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/Moaz2006" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

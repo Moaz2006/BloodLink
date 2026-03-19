@@ -1,0 +1,259 @@
+/* Start Variables */
+:root {
+    --main-color: #890101;
+    --bg-color: #f9f9f9;
+    --main-duration: 0.3s;
+}
+
+/* Global Rules */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Work Sans", sans-serif;
+    background-color: var(--bg-color);
+    line-height: 1.6;
+    direction: rtl; /* اتجاه الصفحة بالكامل من اليمين */
+}
+
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Container Media Queries */
+@media (min-width: 768px) { .container { width: 750px; } }
+@media (min-width: 992px) { .container { width: 970px; } }
+@media (min-width: 1200px) { .container { width: 1170px; } }
+
+/* End Variables */
+
+/* start header */
+header {
+    width: 100%;
+    padding: 10px 0;
+    background-color: var(--main-color);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    /* السطر ده بيخلي اللوجو يروح يسار واللينكات تبدأ بعده لليمين */
+    direction: ltr !important; 
+}
+
+header .container {
+    display: flex;
+    justify-content: flex-start; /* العناصر تبدأ من الشمال */
+    align-items: center;
+    position: relative;
+}
+
+header .logo img {
+    height: 55px;
+    border-radius: 10px;
+}
+
+header nav {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* يخلي المنيو تبدأ فوراً بعد اللوجو */
+    margin-left: 20px; /* مسافة بسيطة بعد اللوجو */
+}
+
+header nav ul {
+    display: flex;
+    list-style: none;
+    /* تقليل المسافة بين اللينكات لـ 2px زي ما طلبت */
+    gap: 2px; 
+    padding: 0;
+    margin: 0;
+}
+
+header nav ul li a {
+    padding: 10px 20px;
+    display: block;
+    color: white; /* خليته أبيض عشان يبقى واضح على الأحمر */
+    text-decoration: none;
+    font-size: 18px;
+    transition: var(--main-duration);
+    font-weight: 500;
+}
+
+/* الحتة البيضا (Active) */
+header nav ul li a.active,
+header nav ul li a:hover {
+    background-color: white;
+    color: var(--main-color) !important;
+    border-radius: 8px;
+}
+
+/* زرار الموبايل */
+header .toggle-menu {
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    display: none;
+    margin-left: auto; /* يزق الأيقونة لليمين خالص في الموبايل */
+}
+
+/* الموبايل Responsive */
+/* الموبايل Responsive */
+@media (max-width: 767px) {
+    header .toggle-menu {
+        display: block;
+    }
+
+    header nav ul {
+        display: none; /* مخفي وهنظهره بالـ JS */
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 100%;
+        background-color: #e7e1e1;
+        padding: 10px;
+        border-radius: 0 0 8px 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        z-index: 2000;
+
+    }
+
+    header nav ul.show {
+        display: flex; /* الكلاس ده الـ JS هيضيفه */
+    }
+
+    header nav ul li {
+        width: 100%;
+    }
+
+    header nav ul li a {
+        color: black;
+        padding: 15px;
+        width: 100%;
+        text-align: right;
+    }
+}
+/* End header */
+
+
+
+
+
+/* Page Titles (Center) */
+.main-page-title {
+    text-align: center;
+    margin-bottom: 40px;
+}
+.special-heading {
+    font-size: 50px;
+    color: var(--main-color);
+    font-weight: 800;
+    text-transform: uppercase;
+}
+.main-page-title p {
+    margin-top: -15px;
+    color: black;
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+/* Spiritual Box (Center) */
+.info-section { padding: 40px 0; }
+.spiritual-container {
+    text-align: center;
+    margin-bottom: 50px;
+}
+.verse-box {
+    background: linear-gradient(135deg, var(--main-color), #500101);
+    color: white;
+    padding: 35px;
+    border-radius: 20px;
+    display: inline-block;
+    max-width: 85%;
+    box-shadow: 0 10px 20px rgba(137, 1, 1, 0.2);
+}
+.quran-text { font-size: 24px; font-weight: bold; margin: 15px 0; }
+
+/* Grid and Cards (Right Aligned Text) */
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+}
+.info-card {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    text-align: right; /* ضمان محاذاة الكلام لليمين */
+}
+.card-title {
+    color: var(--main-color);
+    margin-bottom: 25px;
+    font-size: 22px;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+    text-align: center; /* العنوان الصغير للكارت في النص */
+}
+.info-list { list-style: none; padding-right: 0; }
+.info-list li {
+    padding: 12px 0;
+    border-bottom: 1px solid #f9f9f9;
+    position: relative;
+    padding-right: 20px;
+}
+.info-list li::before {
+    content: "•";
+    color: var(--main-color);
+    position: absolute;
+    right: 0;
+    font-weight: bold;
+}
+
+/* Table (Center) */
+.table-container { overflow-x: auto; margin-top: 15px; }
+.blood-table { width: 100%; border-collapse: collapse; }
+.blood-table th, td { padding: 15px; border: 1px solid #eee; text-align: center; }
+.blood-table th { background: #fdfdfd; color: var(--main-color); }
+.special-row { background-color: #fff8f8; font-weight: bold; }
+
+
+
+/* Mobile Adjustment */
+@media (max-width: 767px) {
+    .special-heading { font-size: 35px; }
+    .quran-text { font-size: 19px; }
+    .verse-box { padding: 20px; }
+}
+
+/* Start Social Footer */
+.social-footer {
+    background-color: #b1b1b1;
+    padding: 15px 0;
+}
+.social-footer .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.social-footer p { font-weight: 500; }
+.social-footer .icons i {
+    margin: 0 10px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: var(--main-duration);
+}
+.social-footer .icons i:hover { color: var(--main-color); }
+
+.social-footer .container a{
+    text-decoration: none;
+    color: black;
+}
+/* End Social Footer */

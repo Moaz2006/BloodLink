@@ -97,7 +97,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: #B1B1B1EA;
+    background: #949090;
     padding: 40px;
     border-radius: 20px; /* عشان الحواف تبقى مدورة زي فيجما */
     box-shadow: 0 10px 30px rgba(0,0,0,0.1);
