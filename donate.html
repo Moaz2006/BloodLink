@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BloodLink</title>
+
+    <!-- Render All Elements Normally -->
+    <link rel="stylesheet" href="css/normalize.css">
+
+    <!-- Font Awesome Library -->
+    <link rel="stylesheet" href="css/all.min.css">
+
+    <!-- BloodLink-Info Template Css File -->
+    <link rel="stylesheet" href="css/donate.css">
+
+    <!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+        <!-- Start Header -->
+<header>
+    <div class="container">
+        <a href="index.html" class="logo">
+            <img src="Images/logo.png" alt="Logo">
+        </a>
+        <nav>
+            <i class="fas fa-bars toggle-menu"></i>
+            <ul class="links">
+                <li><a href="index.html" class="nav-item">الرئيسية</a></li>
+                <li><a href="BloodLink-Info.html" class="nav-item">معلومات التبرع</a></li>
+                <li><a href="search.html" class="nav-item">مراكز التبرع</a></li>
+                <li><a href="blood-request.html" class="nav-item">طلب دم</a></li>
+                <li><a href="donate.html" class="nav-item">تبرع الآن</a></li>
+                <li><a href="login.html" class="nav-item">تسجيل الدخول</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+    <!-- End Header -->
+
+    <div class="donation-form-section">
+        <div class="container">
+            <form class="main-form">
+                <div class="form-header">
+                    <button type="submit" class="send-btn">إرسال الاستمارة</button>
+                    <h2 class="form-title">استمارة التبرع بالدم</h2>
+                    <a href="index.html" class="back-btn">الرجوع</a>
+                </div>
+
+                <div class="form-grid">
+                    
+                    <div class="form-col col-1">
+                        <div class="form-group">
+                            <label>نوع فصيلة الدم</label>
+                            <div class="blood-types-grid">
+                                <label class="radio-card">
+                                    <input type="radio" name="blood_type" value="O+">
+                                    <span>+O</span>
+                                </label>
+                                <label class="radio-card">
+                                    <input type="radio" name="blood_type" value="O-">
+                                    <span>-O</span>
+                                </label>
+                                <label class="radio-card">
+                                    <input type="radio" name="blood_type" value="A+">
+                                    <span>+A</span>
+                                </label>
+                                <label class="radio-card">
+                                    <input type="radio" name="blood_type" value="A-">
+                                    <span>-A</span>
+                                </label>
+                                <label class="radio-card">
+                                    <input type="radio" name="blood_type" value="B+">
+                                    <span>+B</span>
+                                </label>
+                                <label class="radio-card">
+                                    <input type="radio" name="blood_type" value="B-">
+                                    <span>-B</span>
+                                </label>
+                                <label class="radio-card">
+                                    <input type="radio" name="blood_type" value="AB+">
+                                    <span>+AB</span>
+                                </label>
+                                <label class="radio-card">
+                                    <input type="radio" name="blood_type" value="AB-">
+                                    <span>-AB</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group date-group">
+                            <label>متي آخر مرة تبرعت؟</label>
+                            <input type="date" name="last_donation_date">
+                        </div>
+                    </div>
+
+                    <div class="form-col col-2">
+                        <div class="form-group">
+                            <label>هل انت مصاب بمرض؟</label>
+                            <div class="healthy-options">
+                                <label class="radio-inline">
+                                    <input type="radio" name="is_healthy" value="yes">
+                                    <span>نعم</span>
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="is_healthy" value="no" checked>
+                                    <span>لا</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>ما هي الامراض؟</label>
+                            <input type="text" name="diseases" placeholder="اسرد الامراض">
+                        </div>
+                        <div class="form-group-row">
+                            <div class="form-group inline-input">
+                                <label>الطول</label>
+                                <input type="number" name="height" placeholder="الطول">
+                            </div>
+                            <div class="form-group inline-input">
+                                <label>الوزن</label>
+                                <input type="number" name="weight" placeholder="الوزن">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-col col-3">
+                        <div class="form-group">
+                            <label>الاسم كامل</label>
+                            <input type="text" name="full_name">
+                        </div>
+                        <div class="form-group">
+                            <label>النوع</label>
+                            <div class="gender-options">
+                                <label class="radio-inline">
+                                    <input type="radio" name="gender" value="male">
+                                    <span>ذكر</span>
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="gender" value="female">
+                                    <span>انثي</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>العمر</label>
+                            <input type="date" name="birth_date">
+                        </div>
+                        <div class="form-group">
+                            <label>العنوان بالتفصيل</label>
+                            <input type="text" name="address">
+                        </div>
+                        <div class="form-group">
+                            <label>رقم الهاتف</label>
+                            <input type="tel" name="phone">
+                        </div>
+                    </div>
+
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+
+        <!-- Start Social Footer -->
+    <div class="social-footer">
+        <div class="container">
+            <p>find us on social networks</p>
+            <div class="icons">
+                <a href="https://www.linkedin.com/in/moaz-wael-65a9ba378" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/Moaz2006" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </div>
+    </div>
+    <!-- End Social Footer -->
+
+        <script src="js/main.js"></script>
+</body>

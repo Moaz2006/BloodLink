@@ -102,7 +102,6 @@ header .toggle-menu {
 }
 
 /* الموبايل Responsive */
-/* الموبايل Responsive */
 @media (max-width: 767px) {
     header .toggle-menu {
         display: block;
@@ -140,11 +139,7 @@ header .toggle-menu {
 }
 /* End header */
 
-
-
-
-
-/* Page Titles (Center) */
+/* start Page Titles (Center) */
 .main-page-title {
     text-align: center;
     margin-bottom: 40px;
@@ -161,8 +156,9 @@ header .toggle-menu {
     font-size: 18px;
     margin-top: 10px;
 }
+/* End Page Titles */
 
-/* Spiritual Box (Center) */
+/* Start Spiritual Box (Center) */
 .info-section { padding: 40px 0; }
 .spiritual-container {
     text-align: center;
@@ -178,8 +174,9 @@ header .toggle-menu {
     box-shadow: 0 10px 20px rgba(137, 1, 1, 0.2);
 }
 .quran-text { font-size: 24px; font-weight: bold; margin: 15px 0; }
+/* End Spiritual */
 
-/* Grid and Cards (Right Aligned Text) */
+/* Start Grid and Cards (Right Aligned Text) */
 .info-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -196,14 +193,15 @@ header .toggle-menu {
     color: var(--main-color);
     margin-bottom: 25px;
     font-size: 22px;
-    border-bottom: 2px solid #eee;
+    border-bottom: 2px solid #bd8282;
     padding-bottom: 10px;
     text-align: center; /* العنوان الصغير للكارت في النص */
 }
+
 .info-list { list-style: none; padding-right: 0; }
 .info-list li {
     padding: 12px 0;
-    border-bottom: 1px solid #f9f9f9;
+    border-bottom: 1px solid #d2adad;
     position: relative;
     padding-right: 20px;
 }
@@ -222,14 +220,40 @@ header .toggle-menu {
 .blood-table th { background: #fdfdfd; color: var(--main-color); }
 .special-row { background-color: #fff8f8; font-weight: bold; }
 
+/* End Grid and Cards */
 
 
+
+/* start Responsive */
 /* Mobile Adjustment */
 @media (max-width: 767px) {
     .special-heading { font-size: 35px; }
     .quran-text { font-size: 19px; }
     .verse-box { padding: 20px; }
 }
+
+/* --- Tablet Responsive (الشاشات المتوسطة) --- */
+@media (min-width: 768px) and (max-width: 991px) {
+    header .container {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    header .logo img {
+        height: 50px; /* تصغير اللوجو سنة بسيطة */
+    }
+
+    header nav .links {
+        gap: 2px; /* تضيق المسافة بين اللينكات جداً */
+    }
+
+    header nav .links li a {
+        padding: 8px 10px; /* تقليل المسافة جوه الحتة البيضا */
+        font-size: 15px;    /* تصغير الخط عشان يكفي في السطر */
+    }
+}
+
+/* End Responsive */
 
 /* Start Social Footer */
 .social-footer {
@@ -238,6 +262,7 @@ header .toggle-menu {
 }
 .social-footer .container {
     display: flex;
+    flex-direction: row-reverse;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
