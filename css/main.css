@@ -1,9 +1,12 @@
 /* start Variables */
 :root {
+:root {
     --main-color: #890101;    /* اللون الأحمر الأساسي */
+    --container-color: #d9d9d9;
     --secondary-color: #C5C3C3; /* لون رصاصي للخلفية */
     --section-padding: 60px;  /* مسافة ثابتة بين السكاشن */
     --main-duration: 0.3s;
+}
 }
 /* End Variables */
 
@@ -185,7 +188,7 @@ header .toggle-menu {
 
 /* Start Landing */
 .landing {
-    background-color: #d9d9d9; /* اللون الرمادي الفاتح في خلفية الصورة */
+    background-color: var(--container-color); /* اللون الرمادي الفاتح في خلفية الصورة */
     padding-top: var(--section-padding);
     padding-bottom: var(--section-padding);
 }
@@ -201,7 +204,7 @@ header .toggle-menu {
     border-radius: 20px;
 }
 .landing .text {
-    background-color: #C5C3C3;
+    background-color: #E8E5E5;
     border-radius: 20px;
     flex: 1;
     text-align: right;
@@ -262,7 +265,7 @@ header .toggle-menu {
 
 /* Start Social Footer */
 .social-footer {
-    background-color: #b1b1b1;
+    background-color: var(--container-color) !important;
     padding: 15px 0;
 }
 .social-footer .container {

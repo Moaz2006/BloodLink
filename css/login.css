@@ -1,6 +1,8 @@
 /* start Variables */
 :root {
     --main-color: #890101;    /* اللون الأحمر الأساسي */
+    --container-color: #d9d9d9;
+    --side-color:#E8E5E5;
     --secondary-color: #C5C3C3; /* لون رصاصي للخلفية */
     --section-padding: 60px;  /* مسافة ثابتة بين السكاشن */
     --main-duration: 0.3s;
@@ -97,7 +99,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: #949090;
+    background: var(--container-color);
     padding: 40px;
     border-radius: 20px; /* عشان الحواف تبقى مدورة زي فيجما */
     box-shadow: 0 10px 30px rgba(0,0,0,0.1);
@@ -121,14 +123,14 @@ body {
 }
 
 
-.form-side  {
+.form-side2  {
     flex: 1;
-    background: #E8E5E5 !important; /* اللون الرمادي الفاتح اللي في الصورة */
+    background: var(--side-color) !important; /* اللون الرمادي الفاتح اللي في الصورة */
     padding: 30px;
     border-radius: 15px;
 }
 
-.form-side h2 {
+.form-side2 h2 {
     text-align: center;
     margin-bottom: 20px;
     color: var(--main-color);
@@ -246,7 +248,7 @@ button {
         line-height: 1.6;
     }
 
-    .form-side {
+    .form-side2 {
         width: 100%; /* الفورم تفرش في عرض الكارت كله */
         padding: 20px;
     }
@@ -258,7 +260,7 @@ button {
         border-radius: 10px; /* حواف أقل شوية عشان المساحة */
     }
 
-    .form-side h2 {
+    .form-side2 h2 {
         font-size: 20px; /* تصغير العنوان */
         letter-spacing: -1px;
     }

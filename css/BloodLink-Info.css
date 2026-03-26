@@ -3,6 +3,7 @@
     --main-color: #890101;
     --bg-color: #f9f9f9;
     --main-duration: 0.3s;
+    --container-color: #d9d9d9;
 }
 
 /* Global Rules */
@@ -257,7 +258,7 @@ header .toggle-menu {
 
 /* Start Social Footer */
 .social-footer {
-    background-color: #b1b1b1;
+    background-color: var(--container-color);
     padding: 15px 0;
 }
 .social-footer .container {

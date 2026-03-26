@@ -1,10 +1,13 @@
 /* start Variables */
 :root {
     --main-color: #890101;    /* اللون الأحمر الأساسي */
+    --container-color: #d9d9d9;
+    --side-color:#E8E5E5;
     --secondary-color: #C5C3C3; /* لون رصاصي للخلفية */
     --section-padding: 60px;  /* مسافة ثابتة بين السكاشن */
     --main-duration: 0.3s;
 }
+
 /* End Variables */
 
 /* start Components */
@@ -98,7 +101,7 @@ body {
 
 /* الكارت الرئيسي */
 .request-card {
-    background: #E8E5E5;
+    background: var(--container-color);
     border-radius: 25px;
     overflow: hidden;
     width: 100%;
@@ -159,16 +162,20 @@ width: 160px;
     display: flex; /* ده اللي بيخليهم جنب بعض */
     padding: 30px;
     gap: 30px;
-    background-color: #e8e5e5;
+    background-color: var(--container-color);
     flex-direction: row-reverse; /* عشان يبدأ من اليمين للشمال */
 }
 
 .form-side {
-    background-color: #BEBEBE !important;
+    background-color: var(--side-color) !important;
     flex: 1; /* الجزئين واخدين مساحة متساوية */
     display: flex;
     flex-direction: column;
     gap: 20px;
+    padding: 20px;
+    border-radius: 25px;
+    border: 2px solid var(--side-color);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
 }
 
 /* start personal data one */
@@ -326,7 +333,7 @@ width: 160px;
 
 /* Start Social Footer */
 .social-footer {
-    background-color: #b1b1b1;
+    background-color: var(--container-color);
     padding: 15px 0;
     display: flex;
     justify-content: center;

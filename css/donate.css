@@ -1,7 +1,10 @@
 /* Start Variables */
 :root {
-    --main-color: #890101;
-    --bg-color: #f9f9f9;
+    --main-color: #890101;    /* اللون الأحمر الأساسي */
+    --container-color: #d9d9d9;
+    --side-color:#E8E5E5;
+    --secondary-color: #C5C3C3; /* لون رصاصي للخلفية */
+    --section-padding: 60px;  /* مسافة ثابتة بين السكاشن */
     --main-duration: 0.3s;
 }
 
@@ -160,7 +163,7 @@ header .toggle-menu {
 /* الهيدر الأحمر بتاع الاستمارة */
 .form-header {
     background-color: var(--main-color);
-    padding: 15px 25px;
+    padding: 15px 5px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -172,11 +175,24 @@ header .toggle-menu {
     font-weight: bold;
 }
 
-.send-btn, .back-btn {
+.back-btn{
     background-color: white;
     color: var(--main-color);
     border: none;
-    padding: 8px 15px;
+    padding: 8px 13px;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.send-btn {
+    background-color: white;
+    color: var(--main-color);
+    border: none;
+    padding: 8px 5px;
     border-radius: 20px;
     font-weight: bold;
     cursor: pointer;
@@ -195,12 +211,12 @@ header .toggle-menu {
     grid-template-columns: repeat(3, 1fr); /* 3 أعمدة زي فيجما */
     gap: 15px; /* تضييق المسافة بين الأعمدة */
     padding: 25px;
-    background-color: #f1f1f1; /* لون الخلفية اللي ورا الكروت */
+    background-color: var(--container-color); /* لون الخلفية اللي ورا الكروت */
 }
 
 /* تنسيق الكروت الرمادية الداخلية */
 .form-col {
-    background-color: #e2e2e2; /* لون الكارت اللي شايل البيانات */
+    background-color: var(--side-color); /* لون الكارت اللي شايل البيانات */
     padding: 15px;
     border-radius: 10px;
     display: flex;
@@ -269,7 +285,7 @@ header .toggle-menu {
 
 /* Start Social Footer */
 .social-footer {
-    background-color: #b1b1b1;
+    background-color: var(--container-color);
     padding: 15px 0;
 }
 .social-footer .container {
