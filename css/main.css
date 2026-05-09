@@ -222,6 +222,7 @@ header .toggle-menu {
     font-size: 18px;
     line-height: 1.6;
     color: #555;
+    text-align: center;
 }
 @media (max-width: 991px) {
     .landing .container { flex-direction: column; text-align: center; }
