@@ -16,6 +16,15 @@
   --radius:      16px;
   --radius-sm:   10px;
 }
+/* start Variables */
+:root {
+    --main-color: #890101;
+    --container-color: #d9d9d9;
+    --secondary-color: #C5C3C3;
+    --section-padding: 60px;
+    --main-duration: 0.3s;
+}
+/* End Variables */
 
 /* ── General Reset ── */
 *, *::before, *::after {
@@ -310,3 +319,28 @@ h1 { font-size: clamp(1.8rem, 5vw, 2.5rem); font-weight: 800; color: var(--text-
 
   .filter-select { flex: 1 1 120px; }
 }
+
+
+/* Start Social Footer */
+.social-footer {
+    background-color: var(--container-color);
+    padding: 15px 0;
+}
+.social-footer .container {
+    display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.social-footer p { font-weight: 500; }
+.social-footer .icons i {
+    margin: 0 10px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: var(--main-duration);
+}
+.social-footer .icons i:hover { color: var(--main-color); }
+.social-footer .container a { text-decoration: none; color: black; }
+/* End Social Footer */

@@ -51,35 +51,36 @@ body { font-family: "Work Sans", sans-serif; }
 @media (min-width: 1200px) { .container { width: 1170px; } }
 /* End Global Rules */
 
-/* start Header */
+/* start header */
 header {
     width: 100%;
-    padding: 20px 0;
+    padding: 10px 0;
     background-color: var(--main-color);
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     position: sticky;
     top: 0;
     z-index: 1000;
+    direction: ltr !important;
 }
 header .container {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
     position: relative;
 }
-header .logo img {
-    height: 50px;
-    border-radius: 20px;
-}
+header .logo img { height: 55px; border-radius: 10px; }
 header nav {
     flex: 1;
     display: flex;
     align-items: center;
     justify-content: flex-end;
+    margin-left: 20px;
 }
 header nav ul {
     display: flex;
     list-style: none;
+    gap: 2px;
+    padding: 0;
+    margin: 0;
 }
 header nav ul li a {
     padding: 10px 20px;
@@ -93,11 +94,9 @@ header nav ul li a {
 header nav ul li a.active,
 header nav ul li a:hover {
     background-color: white;
-    color: var(--main-color);
+    color: var(--main-color) !important;
     border-radius: 8px;
 }
-
-/* زرار الهامبرجر */
 header .toggle-menu {
     color: white;
     font-size: 24px;
@@ -106,19 +105,16 @@ header .toggle-menu {
     background: none;
     border: none;
     padding: 5px;
-    line-height: 1;
+    margin-left: auto;
 }
 
 /* ============================================
    MOBILE - أصغر من 768px
 ============================================ */
 @media (max-width: 767px) {
-    header .toggle-menu {
-        display: block;
-    }
+    header .toggle-menu { display: block; }
 
     header nav ul {
-        /* بدل display:none نستخدم opacity عشان يتحرك smooth */
         display: flex !important;
         flex-direction: column;
         position: absolute;
@@ -135,15 +131,12 @@ header .toggle-menu {
         pointer-events: none;
         transition: opacity 0.25s ease, transform 0.25s ease;
     }
-
     header nav ul.show {
         opacity: 1;
         transform: translateY(0);
         pointer-events: auto;
     }
-
     header nav ul li { width: 100%; }
-
     header nav ul li a {
         color: #333;
         padding: 14px 20px;
@@ -152,34 +145,10 @@ header .toggle-menu {
         border-radius: 8px;
     }
 
-    header nav ul li a:hover {
-        background-color: #f5f5f5;
-        color: var(--main-color);
-    }
-
-    header nav ul li a.active {
-        background-color: #f5f5f5;
-        color: var(--main-color);
-    }
-
-    /* Landing */
-    .landing .container {
-        flex-direction: column;
-    }
-    .landing .text {
-        padding: 30px 20px;
-        text-align: center;
-    }
-    .landing .text h1 {
-        font-size: 24px;
-        letter-spacing: -1px;
-    }
-    .landing .image img { width: 100%; }
-
-    /* Features */
-    .features .container {
-        grid-template-columns: 1fr;
-    }
+    .special-heading { font-size: 35px; }
+    .quran-text { font-size: 19px; }
+    .verse-box { padding: 20px; max-width: 100%; }
+    .info-grid { grid-template-columns: 1fr; }
 }
 
 /* ============================================
@@ -190,13 +159,22 @@ header .toggle-menu {
         padding: 8px 10px;
         font-size: 14px;
     }
+    .info-grid { grid-template-columns: 1fr; }
+}
+/* End header */
 
-    .landing .container { flex-direction: column; }
-    .landing .text { padding: 40px 30px; text-align: center; }
-
-    .features .container {
-        grid-template-columns: repeat(2, 1fr);
-    }
+/* start Page Titles */
+.main-page-title { text-align: center; margin-bottom: 40px; }
+.special-heading {
+    font-size: 50px;
+    color: var(--main-color);
+    font-weight: 800;
+    text-transform: uppercase;
+}
+.main-page-title p {
+    color: black;
+    font-size: 18px;
+    margin-top: 10px;
 }
 /* End Header */
 
@@ -275,13 +253,21 @@ header .toggle-menu {
 .features .feat a:hover { color: black; }
 /* End Features */
 
+/* Table */
+.table-container { overflow-x: auto; margin-top: 15px; }
+.blood-table { width: 100%; border-collapse: collapse; }
+.blood-table th, .blood-table td { padding: 15px; border: 1px solid #eee; text-align: center; }
+.blood-table th { background: #fdfdfd; color: var(--main-color); }
+.special-row { background-color: #fff8f8; font-weight: bold; }
+
 /* Start Social Footer */
 .social-footer {
-    background-color: var(--container-color) !important;
+    background-color: var(--container-color);
     padding: 15px 0;
 }
 .social-footer .container {
     display: flex;
+    flex-direction: row-reverse;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
@@ -295,8 +281,5 @@ header .toggle-menu {
     transition: var(--main-duration);
 }
 .social-footer .icons i:hover { color: var(--main-color); }
-.social-footer .container a {
-    text-decoration: none;
-    color: black;
-}
+.social-footer .container a { text-decoration: none; color: black; }
 /* End Social Footer */
