@@ -1,47 +1,13 @@
 /* start Variables */
 :root {
-    --main-color: #890101;    /* اللون الأحمر الأساسي */
+    --main-color: #890101;
     --container-color: #d9d9d9;
-    --side-color:#E8E5E5;
-    --secondary-color: #C5C3C3; /* لون رصاصي للخلفية */
-    --section-padding: 60px;  /* مسافة ثابتة بين السكاشن */
+    --side-color: #E8E5E5;
+    --secondary-color: #C5C3C3;
+    --section-padding: 60px;
     --main-duration: 0.3s;
 }
-
 /* End Variables */
-
-/* start Components */
-    .special-heading{
-        color: #ebeced;
-        font-size: 100px;
-        text-align: center;
-        font-weight: 800;
-        letter-spacing: -3px;
-        margin: 0;
-    }
-
-    .special-heading + p{
-        margin: -30px 0 0;
-        font-size: 20px;
-        text-align: center;
-        color: #797979;
-    }
-
-    @media (max-width: 767px){
-        .special-heading{
-            font-size: 60px;
-        }
-
-        .special-heading + p{
-            margin-top: -20px;
-        }
-    }
-
-    html{
-        scroll-behavior: smooth;
-    }
-
-/* end Components */
 
 /* start Global Rules */
 * {
@@ -51,55 +17,26 @@
     margin: 0;
     padding: 0;
 }
-body {
-    font-family: "Work Sans", sans-serif;
-}
-
-    .parent{
-        background-color: #eee;
-    }
-
-    .container{
-        padding-left: 15px;
-        padding-right: 15px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-/* Small */
-@media (min-width: 768px) {
+body { font-family: "Work Sans", sans-serif; }
 .container {
-    width: 750px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
 }
-}
-
-/* Medium */
-@media (min-width: 992px) {
-.container {
-    width: 970px;
-}
-}
-
-/* Large */
-@media (min-width: 1200px) {
-.container {
-    width: 1170px;
-}
-}
+@media (min-width: 768px)  { .container { width: 750px; } }
+@media (min-width: 992px)  { .container { width: 970px; } }
+@media (min-width: 1200px) { .container { width: 1170px; } }
 /* End Global Rules */
 
 /* start Blood Request */
-
-/* تنسيق الصفحة العام */
 .request-page {
     background-color: #eee;
     padding: 40px 0;
     min-height: 100vh;
     display: flex;
-    align-items: center; /* عشان يخلي الكارت في نص الصفحة طولياً */
+    align-items: center;
 }
-
-/* الكارت الرئيسي */
 .request-card {
     background: var(--container-color);
     border-radius: 25px;
@@ -107,8 +44,6 @@ body {
     width: 100%;
     box-shadow: 0 10px 25px rgba(0,0,0,0.1);
 }
-
-/*  الهيدر الأحمر */
 .card-header {
     background-color: var(--main-color);
     padding: 15px 30px;
@@ -119,8 +54,6 @@ body {
     border-radius: 50px;
     margin: 20px;
 }
-
-/* عنوان الكارت */
 .card-header h2 {
     font-weight: bold;
     font-size: 24px;
@@ -128,17 +61,15 @@ body {
     text-align: center;
     margin: 0;
 }
-
-/* زرار الرجوع والارسال */
 .btn-back, .btn-submit {
-width: 160px; 
-    height: 45px; 
+    width: 160px;
+    height: 45px;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: white;
-    color: #333;
-    border-radius: 30px; 
+    color: var(--main-color);
+    border-radius: 30px;
     text-decoration: none;
     font-weight: bold;
     font-size: 15px;
@@ -148,27 +79,19 @@ width: 160px;
     margin: 0;
     padding: 0;
 }
-
-.btn-back { background-color: white; color: var(--main-color); }
-.btn-submit { background-color: white; color: var(--main-color); }
-
 .btn-back:hover, .btn-submit:hover {
-    background-color: white;
-    color: var(--main-color);
+    background-color: #f1d8d8;
 }
-
-/* جسم الاستمارة (التقسيمة اليمين والشمال) */
 .card-body {
-    display: flex; /* ده اللي بيخليهم جنب بعض */
+    display: flex;
     padding: 30px;
     gap: 30px;
     background-color: var(--container-color);
-    flex-direction: row-reverse; /* عشان يبدأ من اليمين للشمال */
+    flex-direction: row-reverse;
 }
-
 .form-side {
     background-color: var(--side-color) !important;
-    flex: 1; /* الجزئين واخدين مساحة متساوية */
+    flex: 1;
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -177,10 +100,6 @@ width: 160px;
     border: 2px solid var(--side-color);
     box-shadow: 0 10px 25px rgba(0,0,0,0.1);
 }
-
-/* start personal data one */
-
-/* تنسيق الـ Inputs */
 .input-group label {
     display: block;
     margin-bottom: 8px;
@@ -188,41 +107,34 @@ width: 160px;
     color: var(--main-color);
     text-align: right;
 }
-    /* تنسيق النص */
-    .input-group .text3{
+.input-group .text3 {
     font-size: 20px;
     display: block;
     margin-bottom: 8px;
     font-weight: bold;
     color: var(--main-color);
     text-align: right;
-    }
-
-
-/* تنسيق مجموعة الجنس */
+}
 .radio-group {
     display: flex;
-    flex-direction: row-reverse; /* عشان الترتيب العربي */
+    flex-direction: row-reverse;
     justify-content: flex-start;
     gap: 30px;
     padding: 10px 0;
 }
-
 .radio-label {
     display: flex;
-    align-items: center; /* بيخلي الدايرة والنص على نفس الخط بالظبط */
+    align-items: center;
     gap: 8px;
     cursor: pointer;
     font-size: 16px;
     color: #333;
 }
-
 .radio-label input[type="radio"] {
-    margin: 0; /* بيشيل أي مسافات افتراضية ممكن تبوظ المحاذاة */
+    margin: 0;
     width: 18px;
     height: 18px;
 }
-
 .input-group input {
     width: 100%;
     padding: 12px;
@@ -231,42 +143,31 @@ width: 160px;
     text-align: right;
     outline: none;
 }
-
-/* تنسيق حقل الهاتف */
 .phone-input {
-    position: relative; /* ده اللي بيثبت الأيقونة جواه */
+    position: relative;
     width: 100%;
 }
-
 .phone-input input {
     width: 100%;
-    padding: 12px 45px 12px 12px; /* المسافة اليمين (45px) عشان الأيقونة متغطيش على الرقم */
+    padding: 12px 45px 12px 12px;
     text-align: right;
 }
-
 .phone-input i {
     position: absolute;
-    right: 15px; /* بيثبتها ناحية اليمين */
+    right: 15px;
     top: 50%;
-    transform: translateY(-50%); /* بيوسطنها عمودياً بالظبط */
+    transform: translateY(-50%);
     color: var(--main-color);
     font-size: 18px;
-    pointer-events: none; /* عشان لو دوست على الأيقونة الـ input يشتغل عادي */
+    pointer-events: none;
 }
-
-/* end personal data one */
-
-/* start personal data two */
-
-/* شبكة فصائل الدم (2 في كل صف) */
 .blood-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 15px;
-    direction: ltr; /* عشان الرموز (+O) تظهر صح */
+    direction: ltr;
     text-align: center;
 }
-
 .input-group .text {
     font-size: 22px;
     display: block;
@@ -275,19 +176,6 @@ width: 160px;
     color: var(--main-color);
     text-align: center;
 }
-
-.blood-grid .blood-item {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    cursor: pointer;
-}
-
-.input-group .blood-item:hover {
-    background-color: #f6f6f6;
-}
-
 .blood-item {
     background: white;
     padding: 10px;
@@ -299,37 +187,99 @@ width: 160px;
     gap: 10px;
     cursor: pointer;
 }
-/*  نهاية شبكة فصائل الدم */
+.blood-item:hover { background-color: #f6f6f6; }
+.input-group .text2 {
+    font-size: 22px;
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: var(--main-color);
+    text-align: center;
+}
 
-    .input-group  .text2{
-        font-size: 22px;
-        display: block;
-        margin-bottom: 8px;
-        font-weight: bold;
-        color: var(--main-color);
-        text-align: center;
-    }
+/* عداد الأكياس */
+.qty-control {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    direction: ltr;
+}
+.qty-control input {
+    width: 70px;
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: bold;
+}
+.qty-control .plus,
+.qty-control .minus {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    background-color: var(--main-color);
+    color: white;
+    font-size: 22px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--main-duration);
+}
+.qty-control .plus:hover,
+.qty-control .minus:hover {
+    background-color: #600101;
+}
 
-
-/* end personal data two */
-
-/* start Responsive */
+/* ============================================
+   MOBILE - أصغر من 768px
+============================================ */
 @media (max-width: 767px) {
     .card-body {
-        flex-direction: column; /* يخليهم فوق بعض في الموبايل */
-        padding: 20px;
+        flex-direction: column;
+        padding: 15px;
     }
-    
     .card-header {
         flex-direction: column;
-        gap: 15px;
+        gap: 12px;
+        border-radius: 16px;
+        margin: 12px;
+        padding: 15px 20px;
+        text-align: center;
     }
-    
-    .card-header h2 { order: -1; } /* العنوان يبقى فوق خالص */
+    .card-header h2 {
+        order: -1;
+        font-size: 18px;
+    }
+    .btn-back, .btn-submit {
+        width: 130px;
+        height: 40px;
+        font-size: 13px;
+    }
+    .blood-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
 }
-/* End Responsive */
-/* End Blood Request */
 
+/* ============================================
+   TABLET - 768px إلى 991px
+============================================ */
+@media (min-width: 768px) and (max-width: 991px) {
+    .card-body {
+        flex-direction: column;
+        padding: 20px;
+    }
+    .card-header {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+}
+/* End Blood Request */
 
 /* Start Social Footer */
 .social-footer {
@@ -354,10 +304,8 @@ width: 160px;
     transition: var(--main-duration);
 }
 .social-footer .icons i:hover { color: var(--main-color); }
-
-.social-footer .container a{
+.social-footer .container a {
     text-decoration: none;
     color: black;
 }
 /* End Social Footer */
-

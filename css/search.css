@@ -1,7 +1,7 @@
 /* ── CSS Variables ── */
 :root {
-  --red-dark:    #8B0000; /* لون الهيدر */
-  --red-main:    #C8102E; /* اللون الأحمر الأساسي للكروت */
+  --red-dark:    #8B0000;
+  --red-main:    #C8102E;
   --red-hover:   #a50d25;
   --red-light:   #fff0f2;
   --green:       #22c55e;
@@ -18,10 +18,10 @@
 }
 
 /* ── General Reset ── */
-*, *::before, *::after { 
-  box-sizing: border-box; 
-  margin: 0; 
-  padding: 0; 
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
@@ -30,16 +30,15 @@ body {
   color: var(--text-main);
   min-height: 100vh;
   direction: rtl;
-  /* هام: إضافة مسافة في الأعلى حتى لا يختفي المحتوى تحت الهيدر الثابت */
-  padding-top: 80px; 
+  padding-top: 70px;
 }
 
-/* ── Fixed Header (Navigation) ── */
+/* ── Fixed Header ── */
 .main-nav {
   background-color: var(--red-dark);
   padding: 10px 0;
   width: 100%;
-  position: fixed; /* هيدر ثابت */
+  position: fixed;
   top: 0;
   right: 0;
   z-index: 1000;
@@ -50,10 +49,11 @@ body {
   max-width: 1200px;
   margin: 0 auto;
   display: flex;
-  flex-direction: row-reverse; /* عكس الترتيب: الروابط يمين واللوجو يسار */
+  flex-direction: row-reverse;
   justify-content: space-between;
   align-items: center;
   padding: 0 20px;
+  position: relative;
 }
 
 .logo img {
@@ -80,7 +80,6 @@ body {
   transition: 0.3s;
 }
 
-/* تنسيق اللينك النشط (الرئيسية) */
 .nav-links li a.active {
   background-color: white;
   color: var(--red-dark);
@@ -89,6 +88,18 @@ body {
 
 .nav-links li a:hover:not(.active) {
   color: #ffcccc;
+}
+
+/* زرار الهامبرجر */
+.mobile-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 26px;
+  cursor: pointer;
+  padding: 4px;
+  line-height: 1;
 }
 
 /* ── Hero Section ── */
@@ -103,7 +114,8 @@ body {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 64px; height: 64px;
+  width: 64px;
+  height: 64px;
   background: var(--red-main);
   border-radius: 50%;
   margin-bottom: 16px;
@@ -124,15 +136,19 @@ h1 { font-size: clamp(1.8rem, 5vw, 2.5rem); font-weight: 800; color: var(--text-
   background: var(--card-bg);
   border-bottom: 1px solid var(--border);
   padding: 15px 24px;
-  position: sticky; 
-  top: 70px; /* يلتصق أسفل الهيدر الثابت */
+  position: sticky;
+  top: 70px;
   z-index: 900;
   box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 
 .filters-inner {
-  max-width: 1200px; margin: 0 auto;
-  display: flex; flex-wrap: wrap; gap: 12px; align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
 }
 
 .filter-select, .search-wrap input {
@@ -173,7 +189,7 @@ h1 { font-size: clamp(1.8rem, 5vw, 2.5rem); font-weight: 800; color: var(--text-
 
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
 .card-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; }
@@ -191,19 +207,19 @@ h1 { font-size: clamp(1.8rem, 5vw, 2.5rem); font-weight: 800; color: var(--text-
   display: inline-block; font-size: 0.75rem; font-weight: 700;
   padding: 4px 10px; margin: 2px; border-radius: 8px;
   background: var(--red-light); color: var(--red-main);
-  border: 1px solid rgba(200, 16, 46, 0.1);
+  border: 1px solid rgba(200,16,46,0.1);
 }
 
-.blood-badge.urgent { 
-  background: var(--red-main); 
-  color: white; 
-  animation: pulse 2s infinite; 
+.blood-badge.urgent {
+  background: var(--red-main);
+  color: white;
+  animation: pulse 2s infinite;
 }
 
 @keyframes pulse {
-  0% { box-shadow: 0 0 0 0 rgba(200, 16, 46, 0.4); }
-  70% { box-shadow: 0 0 0 6px rgba(200, 16, 46, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(200, 16, 46, 0); }
+  0%   { box-shadow: 0 0 0 0 rgba(200,16,46,0.4); }
+  70%  { box-shadow: 0 0 0 6px rgba(200,16,46,0); }
+  100% { box-shadow: 0 0 0 0 rgba(200,16,46,0); }
 }
 
 .btn {
@@ -218,9 +234,79 @@ h1 { font-size: clamp(1.8rem, 5vw, 2.5rem); font-weight: 800; color: var(--text-
 .btn-outline { background: white; color: var(--red-main); border: 1.5px solid var(--red-main); }
 .btn-outline:hover { background: var(--red-light); }
 
-/* ── Responsive ── */
-@media (max-width: 768px) {
-  .nav-links { display: none; } /* يختفي في الشاشات الصغيرة - يمكن إضافة هامبرغر منيو لاحقاً */
+/* ============================================
+   MOBILE - أصغر من 768px
+============================================ */
+@media (max-width: 767px) {
+  .mobile-menu-btn { display: block; }
+
+  .nav-links {
+    display: flex !important;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+    background-color: #fff;
+    padding: 8px;
+    border-radius: 0 0 12px 12px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+    z-index: 999;
+    opacity: 0;
+    transform: translateY(-10px);
+    pointer-events: none;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+  }
+
+  .nav-links.show {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  .nav-links li { width: 100%; }
+
+  .nav-links li a {
+    color: #333 !important;
+    padding: 14px 20px;
+    display: block;
+    width: 100%;
+    text-align: right;
+    border-radius: 8px;
+  }
+
+  .nav-links li a:hover { background-color: #fff0f0; color: var(--red-main) !important; }
+  .nav-links li a.active { background-color: #fff0f0; color: var(--red-dark) !important; }
+
   .hero { padding: 30px 15px; }
-  .filters-section { top: 60px; }
+  .filters-section { top: 65px; }
+
+  .filters-inner {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .filter-select,
+  .search-wrap {
+    flex: unset;
+    width: 100%;
+  }
+
+  .cards-grid { grid-template-columns: 1fr; }
+}
+
+/* ============================================
+   TABLET - 768px إلى 991px
+============================================ */
+@media (min-width: 768px) and (max-width: 991px) {
+  .nav-links li a {
+    padding: 6px 10px;
+    font-size: 0.8rem;
+  }
+
+  .cards-grid { grid-template-columns: repeat(2, 1fr); }
+
+  .filters-inner { flex-wrap: wrap; }
+
+  .filter-select { flex: 1 1 120px; }
 }

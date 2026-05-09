@@ -1,40 +1,30 @@
 /* Start Variables */
 :root {
-    --main-color: #890101;    /* اللون الأحمر الأساسي */
+    --main-color: #890101;
     --container-color: #d9d9d9;
-    --side-color:#E8E5E5;
-    --secondary-color: #C5C3C3; /* لون رصاصي للخلفية */
-    --section-padding: 60px;  /* مسافة ثابتة بين السكاشن */
+    --side-color: #E8E5E5;
+    --secondary-color: #C5C3C3;
+    --section-padding: 60px;
     --main-duration: 0.3s;
 }
 
 /* Global Rules */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
+* { box-sizing: border-box; margin: 0; padding: 0; }
 body {
     font-family: "Work Sans", sans-serif;
     background-color: var(--bg-color);
     line-height: 1.6;
-    direction: rtl; /* اتجاه الصفحة بالكامل من اليمين */
+    direction: rtl;
 }
-
 .container {
     padding-left: 15px;
     padding-right: 15px;
     margin-left: auto;
     margin-right: auto;
 }
-
-/* Container Media Queries */
-@media (min-width: 768px) { .container { width: 750px; } }
-@media (min-width: 992px) { .container { width: 970px; } }
+@media (min-width: 768px)  { .container { width: 750px; } }
+@media (min-width: 992px)  { .container { width: 970px; } }
 @media (min-width: 1200px) { .container { width: 1170px; } }
-
-/* End Variables */
 
 /* start header */
 header {
@@ -44,123 +34,141 @@ header {
     position: sticky;
     top: 0;
     z-index: 1000;
-    /* السطر ده بيخلي اللوجو يروح يسار واللينكات تبدأ بعده لليمين */
-    direction: ltr !important; 
+    direction: ltr !important;
 }
-
 header .container {
     display: flex;
-    justify-content: flex-start; /* العناصر تبدأ من الشمال */
+    justify-content: flex-start;
     align-items: center;
     position: relative;
 }
-
 header .logo img {
     height: 55px;
     border-radius: 10px;
 }
-
 header nav {
     flex: 1;
     display: flex;
     align-items: center;
-    justify-content: flex-end; /* يخلي المنيو تبدأ فوراً بعد اللوجو */
-    margin-left: 20px; /* مسافة بسيطة بعد اللوجو */
+    justify-content: flex-end;
+    margin-left: 20px;
 }
-
 header nav ul {
     display: flex;
     list-style: none;
-    /* تقليل المسافة بين اللينكات لـ 2px زي ما طلبت */
-    gap: 2px; 
+    gap: 2px;
     padding: 0;
     margin: 0;
 }
-
 header nav ul li a {
     padding: 10px 20px;
     display: block;
-    color: white; /* خليته أبيض عشان يبقى واضح على الأحمر */
+    color: white;
     text-decoration: none;
     font-size: 18px;
     transition: var(--main-duration);
     font-weight: 500;
 }
-
-/* الحتة البيضا (Active) */
 header nav ul li a.active,
 header nav ul li a:hover {
     background-color: white;
     color: var(--main-color) !important;
     border-radius: 8px;
 }
-
-/* زرار الموبايل */
 header .toggle-menu {
     color: white;
     font-size: 24px;
     cursor: pointer;
     display: none;
-    margin-left: auto; /* يزق الأيقونة لليمين خالص في الموبايل */
+    background: none;
+    border: none;
+    padding: 5px;
+    margin-left: auto;
 }
 
-/* الموبايل Responsive */
+/* ============================================
+   MOBILE - أصغر من 768px
+============================================ */
 @media (max-width: 767px) {
-    header .toggle-menu {
-        display: block;
-    }
+    header .toggle-menu { display: block; }
 
     header nav ul {
-        display: none; /* مخفي وهنظهره بالـ JS */
+        display: flex !important;
         flex-direction: column;
         position: absolute;
         top: 100%;
         right: 0;
         width: 100%;
-        background-color: #e7e1e1;
-        padding: 10px;
-        border-radius: 0 0 8px 8px;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        background-color: #fff;
+        padding: 8px;
+        border-radius: 0 0 12px 12px;
+        box-shadow: 0 8px 24px rgba(0,0,0,0.15);
         z-index: 2000;
-
+        opacity: 0;
+        transform: translateY(-10px);
+        pointer-events: none;
+        transition: opacity 0.25s ease, transform 0.25s ease;
     }
-
     header nav ul.show {
-        display: flex; /* الكلاس ده الـ JS هيضيفه */
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: auto;
     }
-
-    header nav ul li {
-        width: 100%;
-    }
-
+    header nav ul li { width: 100%; }
     header nav ul li a {
-        color: black;
-        padding: 15px;
+        color: #333;
+        padding: 14px 20px;
         width: 100%;
         text-align: right;
+        border-radius: 8px;
+    }
+
+    /* Donation form */
+    .form-grid {
+        grid-template-columns: 1fr !important;
+        padding: 15px;
+    }
+    .form-header {
+        flex-wrap: wrap;
+        gap: 10px;
+        padding: 12px 15px;
+        justify-content: center;
+    }
+    .form-title {
+        font-size: 18px;
+        width: 100%;
+        text-align: center;
+        order: -1;
+    }
+    .form-group-row {
+        flex-direction: column;
+    }
+}
+
+/* ============================================
+   TABLET - 768px إلى 991px
+============================================ */
+@media (min-width: 768px) and (max-width: 991px) {
+    header nav ul li a {
+        padding: 8px 10px;
+        font-size: 14px;
+    }
+    .form-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
     }
 }
 /* End header */
 
-
-
-    /* --- Start Donation Form Styling --- */
-
-.donation-form-section {
-    padding: 40px 0;
-}
-
-/* الصندوق الأبيض الكبير اللي شايل الفورم */
+/* --- Start Donation Form Styling --- */
+.donation-form-section { padding: 40px 0; }
 .main-form {
     background-color: white;
     border-radius: 15px;
     overflow: hidden;
     box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-    max-width: 1000px; /* بيخلي الفورم ملمومة في نص الشاشة */
+    max-width: 1000px;
     margin: 0 auto;
 }
-
-/* الهيدر الأحمر بتاع الاستمارة */
 .form-header {
     background-color: var(--main-color);
     padding: 15px 5px;
@@ -169,13 +177,11 @@ header .toggle-menu {
     align-items: center;
     color: white;
 }
-
 .form-title {
     font-size: 24px;
     font-weight: bold;
 }
-
-.back-btn{
+.back-btn {
     background-color: white;
     color: var(--main-color);
     border: none;
@@ -187,12 +193,11 @@ header .toggle-menu {
     font-size: 14px;
     transition: 0.3s;
 }
-
 .send-btn {
     background-color: white;
     color: var(--main-color);
     border: none;
-    padding: 8px 5px;
+    padding: 8px 13px;
     border-radius: 20px;
     font-weight: bold;
     cursor: pointer;
@@ -200,58 +205,65 @@ header .toggle-menu {
     font-size: 14px;
     transition: 0.3s;
 }
-
-.send-btn:hover, .back-btn:hover {
-    background-color: #f1d8d8;
-}
-
-/* تضييق المسافات في الـ Grid */
+.send-btn:hover, .back-btn:hover { background-color: #f1d8d8; }
 .form-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 أعمدة زي فيجما */
-    gap: 15px; /* تضييق المسافة بين الأعمدة */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
     padding: 25px;
-    background-color: var(--container-color); /* لون الخلفية اللي ورا الكروت */
+    background-color: var(--container-color);
 }
-
-/* تنسيق الكروت الرمادية الداخلية */
 .form-col {
-    background-color: var(--side-color); /* لون الكارت اللي شايل البيانات */
+    background-color: var(--side-color);
     padding: 15px;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
-    gap: 12px; /* مسافة ضيقة بين العناصر جوه الكارت */
+    gap: 12px;
 }
-
 .form-group {
     display: flex;
     flex-direction: column;
     gap: 5px;
 }
-
+.form-group-row {
+    display: flex;
+    gap: 10px;
+}
+.form-group-row .inline-input { flex: 1; }
 .form-group label {
     font-size: 14px;
     font-weight: bold;
     color: var(--main-color);
     margin-bottom: 2px;
 }
-
 .form-group input {
     padding: 10px;
     border: none;
     border-radius: 8px;
     background-color: #f9f9f9;
     font-size: 14px;
+    width: 100%;
 }
-
-/* تنسيق أزرار فصائل الدم */
+.healthy-options, .gender-options {
+    display: flex;
+    gap: 20px;
+    padding: 8px 0;
+    flex-direction: row-reverse;
+    justify-content: flex-start;
+}
+.radio-inline {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    font-size: 14px;
+}
 .blood-types-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* رص الفصائل جنب بعض */
+    grid-template-columns: repeat(2, 1fr);
     gap: 8px;
 }
-
 .radio-card {
     background: #f9f9f9;
     padding: 8px;
@@ -264,24 +276,12 @@ header .toggle-menu {
     justify-content: space-around;
     border: 1px solid transparent;
 }
-
 .radio-card input { margin: 0; }
-
 .radio-card:has(input:checked) {
     border-color: var(--main-color);
     background-color: #fff5f5;
 }
-
-
-
-/* تظبيط الموبايل عشان ميبقاش محشور */
-@media (max-width: 991px) {
-    .form-grid {
-        grid-template-columns: 1fr; /* عمود واحد في الموبايل والتابلت */
-    }
-}
 /* --- End Donation Form Styling --- */
-
 
 /* Start Social Footer */
 .social-footer {
@@ -304,9 +304,5 @@ header .toggle-menu {
     transition: var(--main-duration);
 }
 .social-footer .icons i:hover { color: var(--main-color); }
-
-.social-footer .container a{
-    text-decoration: none;
-    color: black;
-}
+.social-footer .container a { text-decoration: none; color: black; }
 /* End Social Footer */

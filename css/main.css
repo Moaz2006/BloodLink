@@ -1,46 +1,33 @@
 /* start Variables */
 :root {
-:root {
-    --main-color: #890101;    /* اللون الأحمر الأساسي */
+    --main-color: #890101;
     --container-color: #d9d9d9;
-    --secondary-color: #C5C3C3; /* لون رصاصي للخلفية */
-    --section-padding: 60px;  /* مسافة ثابتة بين السكاشن */
+    --secondary-color: #C5C3C3;
+    --section-padding: 60px;
     --main-duration: 0.3s;
-}
 }
 /* End Variables */
 
 /* start Components */
-    .special-heading{
-        color: #ebeced;
-        font-size: 100px;
-        text-align: center;
-        font-weight: 800;
-        letter-spacing: -3px;
-        margin: 0;
-    }
-
-    .special-heading + p{
-        margin: -30px 0 0;
-        font-size: 20px;
-        text-align: center;
-        color: #797979;
-    }
-
-    @media (max-width: 767px){
-        .special-heading{
-            font-size: 60px;
-        }
-
-        .special-heading + p{
-            margin-top: -20px;
-        }
-    }
-
-    html{
-        scroll-behavior: smooth;
-    }
-
+.special-heading {
+    color: #ebeced;
+    font-size: 100px;
+    text-align: center;
+    font-weight: 800;
+    letter-spacing: -3px;
+    margin: 0;
+}
+.special-heading + p {
+    margin: -30px 0 0;
+    font-size: 20px;
+    text-align: center;
+    color: #797979;
+}
+@media (max-width: 767px) {
+    .special-heading { font-size: 60px; }
+    .special-heading + p { margin-top: -20px; }
+}
+html { scroll-behavior: smooth; }
 /* end Components */
 
 /* start Global Rules */
@@ -51,41 +38,17 @@
     margin: 0;
     padding: 0;
 }
-body {
-    font-family: "Work Sans", sans-serif;
-}
-
-    .parent{
-        background-color: #eee;
-    }
-
-    .container{
-        padding-left: 15px;
-        padding-right: 15px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-/* Small */
-@media (min-width: 768px) {
+body { font-family: "Work Sans", sans-serif; }
+.parent { background-color: #eee; }
 .container {
-    width: 750px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
 }
-}
-
-/* Medium */
-@media (min-width: 992px) {
-.container {
-    width: 970px;
-}
-}
-
-/* Large */
-@media (min-width: 1200px) {
-.container {
-    width: 1170px;
-}
-}
+@media (min-width: 768px)  { .container { width: 750px; } }
+@media (min-width: 992px)  { .container { width: 970px; } }
+@media (min-width: 1200px) { .container { width: 1170px; } }
 /* End Global Rules */
 
 /* start Header */
@@ -93,46 +56,40 @@ header {
     width: 100%;
     padding: 20px 0;
     background-color: var(--main-color);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     position: sticky;
     top: 0;
     z-index: 1000;
 }
-
 header .container {
     display: flex;
-    justify-content: space-between; 
+    justify-content: space-between;
     align-items: center;
-    position: relative; /* مهم جداً للموبايل */
+    position: relative;
 }
-
 header .logo img {
     height: 50px;
     border-radius: 20px;
 }
-
 header nav {
     flex: 1;
     display: flex;
     align-items: center;
     justify-content: flex-end;
 }
-
 header nav ul {
     display: flex;
     list-style: none;
 }
-
 header nav ul li a {
     padding: 10px 20px;
     display: block;
-    color: white; /* خليته أبيض عشان يبقى واضح على الأحمر */
+    color: white;
     text-decoration: none;
     font-size: 18px;
     transition: var(--main-duration);
     font-weight: 500;
 }
-
 header nav ul li a.active,
 header nav ul li a:hover {
     background-color: white;
@@ -140,55 +97,112 @@ header nav ul li a:hover {
     border-radius: 8px;
 }
 
-/* زرار الموبايل */
+/* زرار الهامبرجر */
 header .toggle-menu {
     color: white;
-    font-size: 22px;
+    font-size: 24px;
     cursor: pointer;
     display: none;
+    background: none;
+    border: none;
+    padding: 5px;
+    line-height: 1;
 }
 
-/* الموبايل Responsive */
+/* ============================================
+   MOBILE - أصغر من 768px
+============================================ */
 @media (max-width: 767px) {
     header .toggle-menu {
         display: block;
     }
 
     header nav ul {
-        display: none; /* مخفي وهنظهره بالـ JS */
+        /* بدل display:none نستخدم opacity عشان يتحرك smooth */
+        display: flex !important;
         flex-direction: column;
         position: absolute;
         top: 100%;
         right: 0;
         width: 100%;
-        background-color: #e7e1e1;
-        padding: 10px;
-        border-radius: 0 0 8px 8px;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        background-color: #fff;
+        padding: 8px;
+        border-radius: 0 0 12px 12px;
+        box-shadow: 0 8px 24px rgba(0,0,0,0.15);
         z-index: 2000;
-
+        opacity: 0;
+        transform: translateY(-10px);
+        pointer-events: none;
+        transition: opacity 0.25s ease, transform 0.25s ease;
     }
 
     header nav ul.show {
-        display: flex; /* الكلاس ده الـ JS هيضيفه */
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: auto;
     }
 
-    header nav ul li {
-        width: 100%;
-    }
+    header nav ul li { width: 100%; }
 
     header nav ul li a {
-        color: black;
-        padding: 15px;
+        color: #333;
+        padding: 14px 20px;
         width: 100%;
         text-align: right;
+        border-radius: 8px;
+    }
+
+    header nav ul li a:hover {
+        background-color: #f5f5f5;
+        color: var(--main-color);
+    }
+
+    header nav ul li a.active {
+        background-color: #f5f5f5;
+        color: var(--main-color);
+    }
+
+    /* Landing */
+    .landing .container {
+        flex-direction: column;
+    }
+    .landing .text {
+        padding: 30px 20px;
+        text-align: center;
+    }
+    .landing .text h1 {
+        font-size: 24px;
+        letter-spacing: -1px;
+    }
+    .landing .image img { width: 100%; }
+
+    /* Features */
+    .features .container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ============================================
+   TABLET - 768px إلى 991px
+============================================ */
+@media (min-width: 768px) and (max-width: 991px) {
+    header nav ul li a {
+        padding: 8px 10px;
+        font-size: 14px;
+    }
+
+    .landing .container { flex-direction: column; }
+    .landing .text { padding: 40px 30px; text-align: center; }
+
+    .features .container {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 /* End Header */
 
 /* Start Landing */
 .landing {
-    background-color: var(--container-color); /* اللون الرمادي الفاتح في خلفية الصورة */
+    background-color: var(--container-color);
     padding-top: var(--section-padding);
     padding-bottom: var(--section-padding);
 }
@@ -258,10 +272,7 @@ header .toggle-menu {
     font-weight: bold;
     display: block;
 }
-
-.features .feat a:hover{
-    color: black;
-}
+.features .feat a:hover { color: black; }
 /* End Features */
 
 /* Start Social Footer */
@@ -284,15 +295,8 @@ header .toggle-menu {
     transition: var(--main-duration);
 }
 .social-footer .icons i:hover { color: var(--main-color); }
-
-.social-footer .container a{
+.social-footer .container a {
     text-decoration: none;
     color: black;
 }
 /* End Social Footer */
-
-
-
-
-
-
