@@ -109,7 +109,7 @@ header .toggle-menu {
 }
 
 /* ============================================
-   MOBILE - أصغر من 768px
+    MOBILE - أصغر من 768px
 ============================================ */
 @media (max-width: 767px) {
     header .toggle-menu { display: block; }
@@ -152,7 +152,7 @@ header .toggle-menu {
 }
 
 /* ============================================
-   TABLET - 768px إلى 991px
+    TABLET - 768px إلى 991px
 ============================================ */
 @media (min-width: 768px) and (max-width: 991px) {
     header nav ul li a {

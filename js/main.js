@@ -1,11 +1,11 @@
 /* =====================================================
-   BloodLink — main.js (Unified Version)
+    BloodLink — main.js (Unified Version)
    ===================================================== */
 
 document.addEventListener('DOMContentLoaded', function () {
 
     /* ══════════════════════════════════════════
-       1. UTILITY FUNCTIONS (أدوات مساعدة)
+        1. UTILITY FUNCTIONS (أدوات مساعدة)
        ══════════════════════════════════════════ */
 
     // وظيفة لإظهار رسائل التنبيه (Toast)
@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
     /* ══════════════════════════════════════════
-       2. NAVIGATION & TOGGLE MENU (التنقل والقائمة)
+        2. NAVIGATION & TOGGLE MENU (التنقل والقائمة)
        ══════════════════════════════════════════ */
 
     // التعامل مع كل أنواع الـ Toggle Menu في جميع الصفحات
@@ -105,7 +105,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
     /* ══════════════════════════════════════════
-       3. BLOOD QUANTITY CONTROLS (عداد الأكياس)
+        3. BLOOD QUANTITY CONTROLS (عداد الأكياس)
        ══════════════════════════════════════════ */
 
     const qtyControls = document.querySelectorAll('.qty-control');
@@ -125,7 +125,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
     /* ══════════════════════════════════════════
-       4. FORM SUBMISSIONS (تسجيل الدخول / الطلبات / التبرع)
+        4. FORM SUBMISSIONS (تسجيل الدخول / الطلبات / التبرع)
        ══════════════════════════════════════════ */
 
     // --- صفحة تسجيل الدخول ---
@@ -225,7 +225,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 /* ══════════════════════════════════════════
-   5. SEARCH & CENTERS (صفحة البحث والمراكز)
+    5. SEARCH & CENTERS (صفحة البحث والمراكز)
    ══════════════════════════════════════════ */
 
 const centers = [

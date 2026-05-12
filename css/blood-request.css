@@ -118,7 +118,7 @@ body { font-family: "Work Sans", sans-serif; }
 .radio-group {
     display: flex;
     flex-direction: row-reverse;
-    justify-content: flex-start;
+    justify-content: flex-end;
     gap: 30px;
     padding: 10px 0;
 }

@@ -250,7 +250,7 @@ header .toggle-menu {
     gap: 20px;
     padding: 8px 0;
     flex-direction: row-reverse;
-    justify-content: flex-start;
+    justify-content: flex-end;
 }
 .radio-inline {
     display: flex;
